@@ -2,16 +2,17 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: backstage-ingress
+  namespace: backstage
 spec:
   ingressClassName: nginx
   rules:
   - host: "backstage.f5.demo"
     http:
       paths:
-      - pathType: Prefix
-        path: "/"
+      - path: /
+        pathType: Prefix
         backend:
           service:
-            name: backstage-backend
+            name: backstage
             port:
               number: 80
