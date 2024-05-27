@@ -12,6 +12,6 @@ spec:
         path: "/"
         backend:
           service:
-            name: backstage
+            name: backstage-np
             port:
               number: 80

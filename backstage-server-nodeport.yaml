@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: backstage-np
+spec:
+  selector:
+    app: backstage
+  ports:
+  - protocol: TCP
+    port: 3000
+    nodePort: 32321
+  type: NodePort
