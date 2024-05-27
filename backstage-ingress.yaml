@@ -3,8 +3,15 @@ kind: Ingress
 metadata:
   name: backstage-ingress
 spec:
-  defaultBackend:
-    service:
-      name: backstage
-      port:
-        number: 80
+  ingressClassName: nginx
+  rules:
+  - host: "backstage.f5.demo"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: backstage
+            port:
+              number: 80
