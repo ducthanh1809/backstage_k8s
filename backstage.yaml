@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: backstage
-        image: ducthanh1989/backstage:v2705
+        image: ducthanh1989/backstage:v2805
         imagePullPolicy: IfNotPresent
         ports:
           - name: http
