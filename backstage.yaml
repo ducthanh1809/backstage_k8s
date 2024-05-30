@@ -16,19 +16,21 @@ spec:
       containers:
       - name: backstage
         image: ducthanh1989/backstage:v2805
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
           - name: http
             containerPort: 7007
         envFrom:
+          - configMapRef:
+              name: postgres-configs
           - secretRef:
               name: postgres-secrets
           - secretRef:
               name: backstage-secrets
-        resources:
-          limits:
-            cpu: 2
-            memory: 2.0Gi
+        # resources:
+        #   limits:
+        #     cpu: 2
+        #     memory: 2.0Gi
         # readinessProbe:
         #   httpGet:
         #     port: 7000
